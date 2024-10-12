@@ -20,6 +20,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Login extends AppCompatActivity {
+    String name="admin";
+    String password="admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +38,6 @@ public class Login extends AppCompatActivity {
         EditText nameUser = findViewById(R.id.editTextNombre);
         EditText passwUser = findViewById(R.id.editTextPasswd);
 
-        botonIni.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name="admin";
-                String password="admin";
-
-                if(name.equals(nameUser.getText().toString()) && password.equals(passwUser.getText().toString())){
-                    Intent i = new Intent(Login.this, LoginCorrecto.class);
-                    i.putExtra("Nombre", nameUser.getText().toString());
-                    startActivity(i);
-                }else {
-                    Toast.makeText(Login.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                    Log.d("Login", "Usuario o contraseña incorrectos");
-                }
-            }
-        });
 
 
         ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
@@ -67,6 +53,9 @@ public class Login extends AppCompatActivity {
                             String newPassword = extras.getString("NewPassword");
                             nameUser.setText(newNombre);
                             passwUser.setText(newPassword);
+
+                            name = newNombre;
+                            password = newPassword;
                         }
                     }
                 });
@@ -83,5 +72,18 @@ public class Login extends AppCompatActivity {
 
 
 
+        botonIni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(name.equals(nameUser.getText().toString()) && password.equals(passwUser.getText().toString())){
+                    Intent i = new Intent(Login.this, LoginCorrecto.class);
+                    i.putExtra("Nombre", nameUser.getText().toString());
+                    startActivity(i);
+                }else {
+                    Toast.makeText(Login.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    Log.d("Login", "Usuario o contraseña incorrectos");
+                }
+            }
+        });
     }
 }
