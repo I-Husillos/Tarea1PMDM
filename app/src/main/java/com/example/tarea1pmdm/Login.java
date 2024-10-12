@@ -1,5 +1,6 @@
 package com.example.tarea1pmdm;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -49,25 +54,34 @@ public class Login extends AppCompatActivity {
         });
 
 
+        ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if(result.getResultCode() == Activity.RESULT_OK)  {
+                            Bundle extras = result.getData().getExtras();
+
+                            String newNombre = extras.getString("NewName");
+                            String newPassword = extras.getString("NewPassword");
+                            nameUser.setText(newNombre);
+                            passwUser.setText(newPassword);
+                        }
+                    }
+                });
+
         Button botonMod = findViewById(R.id.buttonModificar);
 
         botonMod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Login.this, ModificarCredenciales.class);
-                startActivity(i);
+                launcherDatosUsuario.launch(i);
             }
-
-            Bundle extras = getIntent().getExtras();
-
-            String newNombre = extras.getString("Nuevo nombre");
-            String newPassword = extras.getString("Nueva contraseña");
-
-            /*nameUser.setText(newNombre);
-            passwUser.setText(newPassword);*/
-
-
         });
+
+
 
     }
 }

@@ -34,9 +34,9 @@ public class ModificarCredenciales extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ModificarCredenciales.this, Login.class);
-
-                i.putExtra("Nuevo nombre", nuevoNombre.getText().toString());
-                i.putExtra("Nueva contraseña", nuevaPassword.getText().toString());
+                i.putExtra("NewName", nuevoNombre.getText().toString());
+                i.putExtra("NewPassword", nuevaPassword.getText().toString());
+                setResult(RESULT_OK, i);
                 finish();
             }
         });
