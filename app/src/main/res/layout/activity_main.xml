@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonSi"
+        android:id="@+id/buttonIrActividad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="160dp"
-        android:text="Button"
+        android:layout_marginEnd="132dp"
+        android:text="Ir a la actividad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
