@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Tarea1PMDM</string>
+    <string name="login">Login</string>
+    <string name="login_error">Login incorrecto</string>
+    <string name="login_correcto">Login correcto</string>
+    <string name="crear_alarma">Crear Alarma</string>
+    <string name="modificar_credenciales">Modifica credenciales</string>
+    <string name="edit_text_name">Nombre</string>
+    <string name="edit_text_passwd">Contraseña</string>
+
 </resources>
