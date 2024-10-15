@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Tarea1PMDM</string>
+    <string name="textViewNombre">Nombre</string>
+    <string name="textViewPasswd">Contraseña</string>
+    <string name="buttonIniciarSesion">Iniciar Sesion</string>
+    <string name="buttonModificar">Modificar Credenciales</string>
+    <string name="textViewBienvenida">Bienvenido: </string>
+    <string name="buttonAlarma">Poner Alarma</string>
+    <string name="textViewNombreAlarma">Nombre Alarma</string>
+    <string name="textViewHora">Hora alarma</string>
+    <string name="textViewMinutos">Minutos alarma</string>
+    <string name="buttonCrearAlarma">Crear Alarma</string>
 </resources>

@@ -33,7 +33,7 @@ public class ModificarCredenciales extends AppCompatActivity {
         btnGuardarCambios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ModificarCredenciales.this, Login.class);
+                Intent i = getIntent();
                 i.putExtra("NewName", nuevoNombre.getText().toString());
                 i.putExtra("NewPassword", nuevaPassword.getText().toString());
                 setResult(RESULT_OK, i);

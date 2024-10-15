@@ -32,7 +32,7 @@ public class LoginCorrecto extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
 
         String nombre = extras.getString("Nombre");
-        bienvenida.setText("Bienvenido " + nombre);
+        bienvenida.setText("Bienvenido: " + nombre);
 
 
         ImageButton imgBtn = findViewById(R.id.imageButton);
