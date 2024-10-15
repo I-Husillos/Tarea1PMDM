@@ -1,16 +1,21 @@
 <resources>
     <string name="app_name">Tarea1PMDM</string>
+    <string name="button_ir_a_la_actividad">Ir a la actividad</string>
     <string name="login">Login</string>
-    <string name="login_error">Login incorrecto</string>
+    <string name="edit_text_name">Nombre</string>
+    <string name="contrasenia">Contraseña:</string>
     <string name="login_correcto">Login correcto</string>
     <string name="crear_alarma">Crear Alarma</string>
-    <string name="edit_text_name">Nombre</string>
-    <string name="edit_text_passwd">Contraseña</string>
+    <string name="bienvenida">Bienvenido</string>
+    <string name="poner_alarma">Poner Alarma</string>
+    <string name="nuevo_nombre">Nuevo Nombre</string>
+    <string name="nueva_contrasenia">Nueva Contraseña</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
+    <string name="nombre_alarma">Nombre Alarma</string>
+    <string name="hora_alarma">Hora Alarma</string>
+    <string name="minutos_alarma">Minutos Alarma</string>
     <string name="button_iniciar_sesion">Iniciar sesión</string>
     <string name="button_crear_alarma">Crear alarma</string>
     <string name="button_modificar_credenciales">Modificar credenciales</string>
-    <string name="button_ir_a_la_actividad">Ir a la actividad</string>
-    <string name="contrasenia">Contraseña:</string>
-
-
+    <string name="login_error">Login incorrecto</string>
 </resources>
