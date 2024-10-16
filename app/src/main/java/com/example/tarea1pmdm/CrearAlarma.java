@@ -41,8 +41,6 @@ public class CrearAlarma extends AppCompatActivity {
                         .putExtra(AlarmClock.EXTRA_MINUTES, Integer.parseInt(minutesAlarma.getText().toString()));
                 startActivity(intent);
 
-
-
             }
         });
     }

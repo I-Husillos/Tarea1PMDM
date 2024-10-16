@@ -40,38 +40,6 @@ public class Login extends AppCompatActivity {
 
 
 
-        ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if(result.getResultCode() == Activity.RESULT_OK)  {
-                            Bundle extras = result.getData().getExtras();
-
-                            String newNombre = extras.getString("NewName");
-                            String newPassword = extras.getString("NewPassword");
-                            nameUser.setText(newNombre);
-                            passwUser.setText(newPassword);
-
-                            name = newNombre;
-                            password = newPassword;
-                        }
-                    }
-                });
-
-        Button botonMod = findViewById(R.id.buttonModificar);
-
-        botonMod.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Login.this, ModificarCredenciales.class);
-                launcherDatosUsuario.launch(i);
-            }
-        });
-
-
-
         botonIni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +53,34 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+
+        ActivityResultLauncher<Intent> launcherDatosUsuario = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                        if(result.getResultCode() == Activity.RESULT_OK)  {
+                            Bundle extras = result.getData().getExtras();
+
+                            String newNombre = extras.getString("NewName");
+                            String newPassword = extras.getString("NewPassword");
+                            nameUser.setText(newNombre);
+                            passwUser.setText(newPassword);
+
+                            name = newNombre;
+                            password = newPassword;
+                        }
+                });
+
+        Button botonMod = findViewById(R.id.buttonModificar);
+
+        botonMod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Login.this, ModificarCredenciales.class);
+                launcherDatosUsuario.launch(i);
+            }
+        });
+
     }
 }
 

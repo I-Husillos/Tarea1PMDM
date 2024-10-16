@@ -1,5 +1,6 @@
 package com.example.tarea1pmdm;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,10 +34,10 @@ public class ModificarCredenciales extends AppCompatActivity {
         btnGuardarCambios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ModificarCredenciales.this, Login.class);
+                Intent i = getIntent();
                 i.putExtra("NewName", nuevoNombre.getText().toString());
                 i.putExtra("NewPassword", nuevaPassword.getText().toString());
-                setResult(RESULT_OK, i);
+                setResult(Activity.RESULT_OK, i);
                 finish();
             }
         });

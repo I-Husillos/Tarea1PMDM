@@ -27,11 +27,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nombre:" />
+                android:text="@string/nombre" />
 
             <EditText
                 android:id="@+id/editTextNombre"
-                android:layout_width="wrap_content"
+                android:layout_width="221dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/contrasenia" />
+                android:text="@string/contrase_a" />
 
             <EditText
                 android:id="@+id/editTextPasswd"
@@ -73,13 +73,13 @@
             android:id="@+id/buttonIniciarSesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Inicar Sesión" />
+            android:text="@string/inicar_sesion" />
 
         <Button
             android:id="@+id/buttonModificar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modificar credenciales" />
+            android:text="@string/modificar_credenciales" />
 
     </LinearLayout>
 
